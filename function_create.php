@@ -1,14 +1,16 @@
 <?php
 
-const TIME = 7200;
+const TIME = 432000;
 
-setcookie('userboi', 'John Carter', time() + TIME);
+
 
 $cookie_name = 'userboi';
 $username = 'John carter';
-$expiration = TIME;
+$expiration = 7200;
 
 function createCookie($cookie_name, $username, $expiration){
+
+    setcookie('userboi', 'John Carter', time() + TIME);
 
     echo "[{$cookie_name} set for {$expiration} minutes.]";
   }

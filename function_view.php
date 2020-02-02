@@ -3,7 +3,6 @@
 const TIME = 7200;
 
 $cookie_name = 'userboi';
-$username = 'John carter';
 $expiration = TIME;
 
 function viewCookie($cookie_name){
@@ -15,6 +14,6 @@ echo $_COOKIE[$cookie_name];
 
 }
 
-viewCookie($cookie_name, $username, $expiration);
+viewCookie($cookie_name);
 
 ?>
