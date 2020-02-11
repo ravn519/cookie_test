@@ -1,8 +1,10 @@
 <?php
 
-function fizzbuzz($end = 100){
+function fizzbuzz($start, $end){
 
-for ($i = 1; $i <= $end; $i++) {
+	$i = $start;
+
+for ($i; $i <= $end; $i++) {
 
 	if($i % 3 == 0 && $i % 5== 0) {
 		echo "FizzBuzz";
@@ -26,6 +28,6 @@ for ($i = 1; $i <= $end; $i++) {
 }
 }
 
-fizzbuzz($end = 100);
+fizzbuzz($start = 1, $end = 100);
 
 ?>

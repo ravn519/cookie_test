@@ -1,6 +1,8 @@
 <?php
 
-function fizzbuzz ($end = 100, $i = 1){
+function fizzbuzz ($start, $end){
+
+	$i = $start;
 
 while ($i <= $end) {
 
@@ -24,6 +26,6 @@ while ($i <= $end) {
 	}
 }
 
-fizzbuzz($end = 100);
+fizzbuzz($start = 1, $end = 100);
 
 ?>
