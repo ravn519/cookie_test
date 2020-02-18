@@ -74,17 +74,6 @@ class Ryan {
 
     //Iterator test
 
-    static function myIterator($arr){
-
-        for ($a = 0; $a < count($arr) ; $a++){ 
-
-            echo $arr[$a];
-            echo "\n";
-
-        } 
-
-    }
-
     static function betterIterator($arr){
 
         foreach ($arr as $value) {
@@ -108,7 +97,13 @@ class Ryan {
 
     } 
 
-    static function fibonacci($i, $end, $first, $second){
+    //Fibonacci sequence loop
+
+    static function fibonacci($end){
+
+        $i = 0;
+        $first = 0;
+        $second = 1;
 
         while ($i < $end){ 
         
@@ -180,5 +175,9 @@ class Ryan {
         }
     }
 }
+
+    //String search test
+
+    //static function isCrewCab()
 
 ?>
