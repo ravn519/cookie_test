@@ -152,6 +152,7 @@
     'Sachiko',
     'Mieko',
     'Toshie',
-    'Junko');
+    'Junko'
+    );
 
 ?>

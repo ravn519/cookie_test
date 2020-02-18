@@ -7,7 +7,8 @@ class Ryan {
     static function test(){
 
         echo "this is a test.";
-    }   
+        
+    }
 
     //Create cookie function test
 
@@ -75,7 +76,7 @@ class Ryan {
 
     static function myIterator($arr){
 
-        for ($a = 0; $a < sizeof($arr) ; $a++){ 
+        for ($a = 0; $a < count($arr) ; $a++){ 
 
             echo $arr[$a];
             echo "\n";
@@ -93,6 +94,32 @@ class Ryan {
 
         }
 
+    }
+
+    //First/Last name interator
+
+    static function firstLastIterator($arr){
+
+        for ($i=0; $i <= count($arr) - 3; $i=$i + 3){ 
+
+            echo $arr[$i] . " " . $arr[$i+1] . " " . $arr[$i + 2];
+            echo "\n";
+        }
+
+    } 
+
+    static function fibonacci($i, $end, $first, $second){
+
+        while ($i < $end){ 
+        
+            echo $first; 
+            echo "\n";
+
+            $third = $second + $first; 
+            $first = $second; 
+            $second = $third; 
+            $i = $i + 1; 
+        }
     }
 
     //Fizzbuzz for loop test
