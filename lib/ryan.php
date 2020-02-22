@@ -174,10 +174,39 @@ class Ryan {
             $i++;
         }
     }
-}
 
     //String search test
 
-    //static function isCrewCab()
+    static function isCrewCab($str){
+
+        $result = strpos(strtoupper($str), "C-CAB");
+
+        if ($result === FALSE){
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+
+    }
+
+    static function convertWheelbase($str){
+
+        return round(((float) explode(" ", $str)[0]) / 12, 1);
+
+    }
+
+    static function isCanadian($dealer){
+
+        if ($dealer[1] === "4") {
+            return TRUE;
+        
+        } else {
+            return FALSE;
+
+        }
+
+    }
+
+}
 
 ?>
