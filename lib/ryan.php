@@ -72,28 +72,26 @@ class Ryan {
 
     }
 
-    //Iterator test
+    //Name Object interator
 
-    static function betterIterator($arr){
+    static function nameObject($arr){
 
-        foreach ($arr as $value) {
-
-            echo $value;
-            echo "\n";
-
-        }
-
-    }
-
-    //First/Last name interator
-
-    static function firstLastIterator($arr){
+        $return = [];
 
         for ($i=0; $i <= count($arr) - 3; $i=$i + 3){ 
 
-            echo $arr[$i] . " " . $arr[$i+1] . " " . $arr[$i + 2];
-            echo "\n";
+            $names = [
+                "first" => $arr[$i],
+                "middle" => $arr[$i+1],
+                "last" => $arr[$i + 2],
+                "age" => mt_rand(1, 100)
+            ];
+
+            array_push( $return, $names );
+
         }
+
+        return $return;
 
     } 
 

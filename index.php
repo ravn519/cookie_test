@@ -6,19 +6,10 @@ require (dirname(__FILE__) . '/data/trucks.php');
 
 require (dirname(__FILE__) . '/data/names.php');
 
-foreach ($models as $model) {
+$thing = Ryan::nameObject($names);
 
-    if (Ryan::isCrewCab($model)) {
-        echo "Is Crew Cab\n";
-    } else {
-        echo "Is Not Crew Cab\n";
-    }
-    
-}
+header("Content-Type: application/json");
 
-foreach ($wheelbases as $wheelbase){
-
-    echo Ryan::convertWheelbase($wheelbase), " ft.\n";
-}
+echo json_encode ($thing);
 
 ?>
