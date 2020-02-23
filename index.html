@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link href="main.css" rel="stylesheet">
+    <title>Login Portal</title>
+  </head>
+
+  <body>
+    <div id="content">
+
+      <div id="fields">
+
+        <input type="text" id="username" placeholder="Username" />
+
+        <div id="login_button" title="Login">
+          <img class="lock" src="./img/lock.png" width="50%" height="auto" />
+        </div>
+
+        <input type="password" id="password" placeholder="Password" />
+
+      </div>
+
+      <div id="response"></div>
+
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).on('click', '#login_button', function(){
+      $.ajax({
+        url: './login.php',
+        method: 'POST',
+        data: {username: $('#username').val(), password: $('#password').val()},
+        dataType: 'TEXT',
+        success: function(res, status, xhr){
+          $('#response').removeClass('error').addClass('success').html(`${xhr.status} - ${xhr.statusText}`);
+        },
+        error: function(err){
+          $('#response').removeClass('success').addClass('error').html(`${err.status} - ${err.statusText}`);
+        }
+      });
+    });
+  </script>
+</html>
