@@ -1,38 +1,29 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link href="main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="index.css" rel="stylesheet">
     <title>Login Portal</title>
   </head>
-
   <body>
     <div id="content">
-
       <div id="fields">
-
         <input type="text" id="username" placeholder="Username" />
-
         <div id="login_button" title="Login">
-          <img class="lock" src="./img/lock.png" width="50%" height="auto" />
+          <img src="./img/lock.png" />
         </div>
-
         <input type="password" id="password" placeholder="Password" />
-
       </div>
-
       <div id="response"></div>
-
     </div>
   </body>
-
   <script type="text/javascript">
     $(document).on('click', '#login_button', function(){
       $.ajax({
         url: './login.php',
         method: 'POST',
         data: {username: $('#username').val(), password: $('#password').val()},
-        dataType: 'TEXT',
+        dataType: 'text',
         success: function(res, status, xhr){
           $('#response').removeClass('error').addClass('success').html(`${xhr.status} - ${xhr.statusText}`);
         },
@@ -40,6 +31,11 @@
           $('#response').removeClass('success').addClass('error').html(`${err.status} - ${err.statusText}`);
         }
       });
+    });
+    $(document).keypress(function(e) {
+      if(e.which == 13) {
+        $('#login_button').click();
+      }
     });
   </script>
 </html>
